@@ -1,17 +1,36 @@
-<?php
-$boxer1Weight = 70.4;
-$boxer2Weight = 72.2;
-
-if ($boxer1Weight >= 90 && $boxer2Weight >= 90) {
-  echo 'FIGHT !!!';
-} 
-else if ($boxer1Weight < 90 && $boxer2Weight >= 90) {
-  echo 'Impossible de combattre !car boxer1 n\'est pas poids lourd';
-} 
-else if ($boxer1Weight >= 90 && $boxer2Weight < 90) { 
-  echo 'Impossible de combattre !car boxer2 n\'est pas poids lourd';
-  } 
-else {
-  echo 'Impossible de combattre ! car les deux boxeurs ne sont pas des poids lourds';
-  }
-
+<html>
+  <head>
+    <title>Devine mon nombre !</title>
+  </head>
+  <body>
+    <h1>Pense à un nombre entre 1 et 50 !</h1>
+    <?php 
+      $number = 22; // le nombre à trouver
+      $numberTrials = 10; // le nombre de tentatives autorisées maximum
+      if ($number < 0 || $number > 50) {
+        echo 'Hey, tu triches ! On avait dit dit entre 0 et 50';
+      } else {
+    ?>
+    <p>Hum, attends j'essaye de deviner !</p>
+    <?php
+        $trials = 0;
+        do {
+          $computerTrial = rand(0, 50);
+          echo 'Est ce qu\'il s\'agit du nombre' .$computerTrial. '?';
+          
+          if ($computerTrial == $number) {
+            echo 'Bravo tu as trouvé c\'est bien le bon nombre<h2>tu es un véritable champion</h2>';
+          break;
+          } else {
+          echo '<h2> non c\'est raté <br> c\'est pas mauvais, c\'est très mauvais !</h2>';
+          }
+          $trials++;
+        } while ($trials < $numberTrials);
+        if ($computerTrial != $number){
+          echo '<br> Désolé je n\'ai pas trouvé =( !';
+        }
+      }
+    ?> 
+    <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+  </body>
+</html>
