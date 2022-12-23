@@ -88,3 +88,13 @@ do {
   $d ++;
 } while ($d <= 10);
 
+// tableau clés/valeurs ou tableau associatif
+$associativeArray = [
+  "id" => 1,
+  "name" => "Vince",
+  "age" => 38
+];
+var_dump ($associativeArray);
+echo "<br>" . $associativeArray["name"];
+
+
